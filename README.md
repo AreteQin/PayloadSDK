@@ -1,7 +1,5 @@
 # PayloadSDK
 
-# DJI M30T
-
 ## Development
 ```bash
 sudo vim /etc/rc.local
@@ -21,32 +19,6 @@ Comment the following line:
 sleep 25
 #cd /home/nvidia/icreast/build
 #./bin/dji_sdk_demo_linux_cxx &
-```
-
-Set the port name in:
-```bash
-vim ~/Payload-SDK/samples/sample_c++/platform/linux/manifold2/hal/hal_uart.h
-```
-```cpp
-/* Exported constants --------------------------------------------------------*/
-//User can config dev based on there environmental conditions
-#define LINUX_UART_DEV1    "/dev/ttyTHS1"
-#define LINUX_UART_DEV2    "/dev/ttyTHS1"
-```
-
-Set hardware connection in file:
-```bash
-vim ~/Payload-SDK/samples/sample_c++/platform/linux/manifold2/application/dji_sdk_config.h
-```
-```C++
-/* Exported constants --------------------------------------------------------*/
-#define DJI_USE_ONLY_UART                  (0)
-#define DJI_USE_UART_AND_USB_BULK_DEVICE   (1)
-#define DJI_USE_UART_AND_NETWORK_DEVICE    (2)
-
-/*!< Attention: Select your hardware connection mode here.
-* */
-#define CONFIG_HARDWARE_CONNECTION         DJI_USE_UART_AND_NETWORK_DEVICE
 ```
 
 Set your DJI enterprise account in file:
