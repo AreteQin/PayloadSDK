@@ -37,7 +37,17 @@ vim ~/Payload-SDK/samples/sample_c++/platform/linux/manifold2/application/dji_sd
 #define USER_BAUD_RATE              "460800"
 ```
 
-Finally, build the project:
+## Dependencies
+```bash
+sudo apt-get install libboost-all-dev ffmpeg
+cd ~/PayloadSDK/ThirdParty/opus-1.5.2
+autoreconf  -f  -i
+./configure
+make -j4
+sudo make install
+```
+
+## Build
 ```bash
 mkdir build && cd build
 cmake ..
